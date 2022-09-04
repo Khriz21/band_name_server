@@ -31,6 +31,17 @@
       socket.on('message', (payload)=>{
         console.log('mensaje de:', payload.admin);
       });
+
+      socket.on('new-message', (payload)=>{
+        console.log("mensaje de:", payload.name);
+        console.log(payload.message);
+      });
+
+      socket.on("active-bands", (payload)=>{
+        console.clear();
+        console.table(payload);
+        
+      })
     </script>
   </body>
 </html>
